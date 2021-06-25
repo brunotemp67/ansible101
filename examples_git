@@ -1,0 +1,83 @@
+# Ansible adhoc command executed as root and asking for root password (-K option)
+# install git
+sudo ansible localhost -m apt -a "name=git state=present" -K
+
+bruno@W10H1ND2Z2:~/ansible$ sudo ansible localhost -m apt -a "name=git state=present" -K
+BECOME password:
+localhost | SUCCESS => {
+    "cache_update_time": 1624487901,
+    "cache_updated": false,
+    "changed": false
+}
+
+# init git
+git init
+
+# create some files to play
+touch text.txt html.html
+
+# set git global settings
+git config --global user.name 'Bruno Nardone'
+git config --global user.email 'brunotemp67@outlook.com'
+
+# adding/committing files to master branch
+# this command add the files to the master branch. the files are mot committed. you can use *.txt, file.* or just . to add all the file
+# in the directory
+git add .
+
+#this command shows the status for the master branch
+git status
+
+bruno@W10H1ND2Z2:~/ansible$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   exampes_git
+        new file:   html.html
+        new file:   lista.ini
+        new file:   test1.yml
+        new file:   text.txt
+
+
+# this command commit the files to the master branch. it's recommended that once you commit files, 
+# you add a message or comment (-m option)
+
+bruno@W10H1ND2Z2:~/ansible$ git commit -m 'first comit'
+[master (root-commit) 2929158] first comit
+ 5 files changed, 69 insertions(+)
+ create mode 100644 exampes_git
+ create mode 100644 html.html
+ create mode 100644 lista.ini
+ create mode 100644 test1.yml
+ create mode 100644 text.txt
+
+# if you have to remove a file that was committed.
+git rm --cached text.txt
+
+bruno@W10H1ND2Z2:~/ansible$ git rm --cached lio
+rm 'lio'
+
+# Connection with the remote repository in github
+# setting the new remote repository
+bruno@W10H1ND2Z2:~/ansible$ git remote add origin https://github.com/brunotemp67/ansible101.git
+
+# Pushing local master to remote repository
+bruno@W10H1ND2Z2:~/ansible$ git push -u origin master
+Username for 'https://github.com': Brunotemp67
+Password for 'https://Brunotemp67@github.com':
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (8/8), 1.37 KiB | 1.37 MiB/s, done.
+Total 8 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/brunotemp67/ansible101.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+bruno@W10H1ND2Z2:~/ansible$
+
+
