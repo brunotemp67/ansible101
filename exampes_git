@@ -1,0 +1,11 @@
+Ansible adhoc command executed as root and asking for root password (-K option)
+sudo ansible localhost -m apt -a "name=git state=present" -K
+
+bruno@W10H1ND2Z2:~/ansible$ sudo ansible localhost -m apt -a "name=git state=present" -K
+BECOME password:
+localhost | SUCCESS => {
+    "cache_update_time": 1624487901,
+    "cache_updated": false,
+    "changed": false
+}
+
