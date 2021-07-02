@@ -1,0 +1,10 @@
+# test-host file
+[webservers]
+#18.118.159.84
+server1 ansible_host=18.118.159.84
+
+[bastions]
+#18.118.49.192
+server2 ansible_host=18.118.49.192
+[local]
+control ansible_connection=local

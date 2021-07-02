@@ -1,10 +1,20 @@
 ---
 -   name: test1
-    hosts: localhost
-    become: yes
-    become_user: root
+    hosts: all
+#    become: yes
+#    become_user: root
     tasks: 
-        - name: test an rpm exist
-          apt:
-            name: vim
+#        - name: test an rpm exist
+#          apt:
+#            name: vim
+#            state: present
+        - name: create a file
+          file:
+            path: ~/lio
+            state: touch
+        - name: add message
+          lineinfile:
+            path: ~/lio
+            line: 'hola como te va'
             state: present
+

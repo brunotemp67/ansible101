@@ -3,3 +3,4 @@
 *.pem
 *.ini
 *.cfg
+.ssh/

@@ -1,0 +1,5 @@
+ansible localhost -m file -a "path=./emptyfolder state=directory"
+ansible localhost -m file -a "path=./emptyfolder/test.txt state=touch"
+ansible localhost -m archive -a "path=./emptyfolder/test.txt format=zip"
+ansible localhost -m file -a "path=./emptyfolder/test.txt state=absent"
+

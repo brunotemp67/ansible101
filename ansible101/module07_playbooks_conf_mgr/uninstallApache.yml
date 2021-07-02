@@ -1,0 +1,7 @@
+# Uninstall apache
+---
+  - hosts: webservers:bastions
+    become: true
+    tasks:
+      - name: uninstall apache
+        yum: name=apache2 state=absent
