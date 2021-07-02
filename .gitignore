@@ -4,3 +4,5 @@
 *.ini
 *.cfg
 .ssh/
+ansible101/
+playbooks/
