@@ -1,6 +1,0 @@
-# variable file with a single list variable
-directions:
-  - north
-  - south
-  - east
-  - west
