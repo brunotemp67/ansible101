@@ -4,7 +4,7 @@
 *.ini
 *.cfg
 .ssh/
-ansible101/
+ansible101_notes_examples_challenges/
 playbooks/
 playbooks/variables/
 roles/
