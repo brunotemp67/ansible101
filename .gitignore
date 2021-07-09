@@ -6,4 +6,7 @@
 .ssh/
 ansible101/
 playbooks/
-playbooks/variables
+playbooks/variables/
+roles/
+roles_classes/
+files/
